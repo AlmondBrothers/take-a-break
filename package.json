@@ -1,7 +1,7 @@
 {
   "name": "Take-a-Break",
   "version": "1.0.0",
-  "description": "Vocab Saver, the playground for words",
+  "description": "Take a Break: Grow and Produce",
   "main": "server.js",
   "scripts": {
     "test": "test",
