@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AlmondBrothers/TakeABreak.git",
+    "url": "git+https://github.com/AlmondBrothers/TakeABreak.git"
   },
   "author": "Almond Brothers Band",
   "license": "MIT",
