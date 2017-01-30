@@ -1,0 +1,27 @@
+[
+  {
+    "type": "Physical",
+    "title": "Explore",
+    "description": "Walk for 5 minutes outside!"
+  },
+  {
+    "type": "Physical",
+    "title": "Push",
+    "description": "Do 10 pushups or any variation of a pushup!"
+  },
+  {
+    "type": "Physical",
+    "title": "Climb",
+    "description": "Go walk up and down at least 2 flights of stairs!"
+  },
+  {
+    "type": "Physical",
+    "title": "Jump",
+    "description": "Do as many jumping-jacks as you can for 1 minute!"
+  },
+  {
+    "type": "Physical",
+    "title": "Plank",
+    "description": "Hold a plank for at least 30 seconds! Do this at least 3 times!"
+  }
+]
