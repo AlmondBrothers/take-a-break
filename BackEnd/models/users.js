@@ -18,6 +18,46 @@ var userSchema = mongoose.Schema({
 
 var User = module.exports = mongoose.model('User', userSchema);
 
+// '/api/users/' in server.js
+module.exports.getUsers = function(callback, limit) {
+  // see line 19 - represents 'User' table access by Mongoose ORM
+  User.find(callback).limit(limit);
+};
+
+// '/api/users/:id - http://mongoosejs.com/docs/api.html#model_Model.findById
+module.exports.getUserById = function(id, callback) {
+  // see line 19 - represents 'User' table access by Mongoose ORM
+  User.findById(id, callback);
+};
+
+// '/api/users/:name' in server.js
+module.exports.getUserByName = function(userName, callback) {
+  // see line 19 - represents 'User' table access by Mongoose ORM
+  // User.findOne(userName, callback);
+  var query = User.where(userName);
+  query.findOne(callback);
+};
+
+// '/api/users/' in server.js
+module.exports.addUser = function(userName, callback) {
+  // http://mongoosejs.com/docs/models.html - create: User.create({}, callback)
+  // callback in 'server.js' should be function (err, userName)
+  User.create(userName, callback);
+};
+
+// '/api/users/' in server.js
+module.exports.updateUserPassWord = function(email, pass, options, callback) {
+  // email is the only 'unique' attribute!
+  var query = {email: email};
+  // only updating the password - not sure if this works
+  var update = {password: pass};
+  // http://mongoosejs.com/docs/api.html#model_Model.findOneAndUpdate
+  User.findOneAndUpdate(query, update, options, callback);
+};
+
+// Update the Password 'PUT REQUEST'
+
+
 // ** Dummy Data Instance **/
 // var marcus = new User({
 //   name: 'Marcus',
