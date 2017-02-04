@@ -68,18 +68,16 @@ app.get('/api/users/:_id', function(req, res) {
 
 // Create a route to get UserByName - DOES NOT WORK
 app.get('/api/users/:name', function(req, res) {
-  var userName = {'name': req.params.name};
+  // var userName = {'name': req.params.name};
 
-  User.getUserByName(userName, function(err, user) {
+  // console.log('Marcus is the userName: ', req.params.name);
+  User.getUserByName(req.params.userName, function(err, user) {
     if (err) {
       console.log('error: ', err);
     }
     // respond back all 'data' for the specific user!
     // console.log(res.json(user));
-    if (user) {
-      console.log('Trying to Get a specific userName!');
-      res.json(user);
-    }
+    res.json(user);
   });
 });
 
