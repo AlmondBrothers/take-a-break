@@ -1,17 +1,96 @@
-<html ng-app="myApp">
-<head>
-  <title>Take a Break</title>
-</head>
-<body>
-  <h1>Take a Break</h1>
-  <div ng-view></div>
+<!-- O auth client ID -->
+<!-- 615892834166-ivohjnsuejg5llvsn8khqcqher5qfbpm.apps.googleusercontent.com -->
+
+<html lang="en">
+  <head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <meta name="google-signin-scope" content="profile email">
+
+    <!-- placement of clientID here to enable access to Google sign-in API features -->
+    <meta name="google-signin-client_id" content="615892834166-ivohjnsuejg5llvsn8khqcqher5qfbpm.apps.googleusercontent.com">
+
+    <!-- api js: core JS library -->
+    <script src="https://apis.google.com/js/platform.js"></script>
+  </head>
+  <body>
+    <h1>Sign-In View</h1>
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+    <a href="#" onclick="signOut();">Sign out</a>
+      <script>
+      function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+        //above gets profile of user. We can create a user object with the following info:
+
+        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
+
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID token is what we send to back-end");
+        console.log("ID Token: " + id_token);
+        if (id_token) {
+
+          //server  
+          // var url = 'http://localhost:8000/home'
+          // $.ajax({
+          //     //data:{},
+          //     type: "GET",
+          //     //cache: false,
+          //     url: url,
+          //     //dataType: "html",
+          //     contentType: "",
+          //     success: function(){
+          //       //here
+          //       console.log(url);
+          //       console.log('inside success funciton');
+          //     },
+          //     error: function() {
+          //       console.log('failure');
+          //     }
+          // });
+          
+
+          //redirect to home page without hitting server
+            //make get request to routes in express
+            console.log('success');
+            $.ajax({
+              url: '/',
+              type: 'GET',
+              data: '',
+              contentType: 'application/json',
+              success: function (data) {
+                console.log('success');
+                //hits old-index.html which gives us access to user
+                window.location = 'old-index.html'
+              },
+              error: function (data) {
+                // See: https://developer.mozilla.org/en-US/docs/Web/API/console.error
+                console.error('Failed to access homepage', data);
+              }
+            }); 
+        
+        }      
 
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
-  <script src="app.js"></script>
-  <script src="/controllers/signup.js"></script>
-  <script src="/controllers/signin.js"></script>
-  <script src="/controllers/home.js"></script>
-</body>
+      };
+
+      gapi.load('auth2', function(){
+        gapi.auth2.init();
+      });
+
+      function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+          console.log('User signed out.');
+        });
+      }
+
+    </script>
+  </body>
 </html>
