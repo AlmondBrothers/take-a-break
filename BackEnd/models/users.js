@@ -34,8 +34,11 @@ module.exports.getUserById = function(id, callback) {
 module.exports.getUserByName = function(userName, callback) {
   // see line 19 - represents 'User' table access by Mongoose ORM
   // User.findOne(userName, callback);
-  var query = User.where(userName);
-  query.findOne(callback);
+  // var query = User.where(userName);
+  // query.findOne(callback);
+  var specificUser = {name: userName};
+
+  User.findOne(specificUser, callback);
 };
 
 // '/api/users/' in server.js
