@@ -24,3 +24,16 @@ myApp.factory('aBreak', function($http) {
     getBreak: getBreak,
   };
 });
+
+myApp.factory('aUser', function($http) {
+  var getUser = function(config, callback) {
+    return $http.get('/api/users', {params: {name: 'Marcus'}})
+    .then(function(user) {
+      console.log(user.data);
+    });
+  };
+
+  return {
+    getUser: getUser,
+  };
+});

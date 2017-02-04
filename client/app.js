@@ -16,6 +16,7 @@ myApp.config(function($routeProvider, $locationProvider) {
     .when('/', {
       controller: 'home',
       templateUrl: '/views/home.html',
+      reloadOnSearch: false,
     })
 
     .otherwise({
