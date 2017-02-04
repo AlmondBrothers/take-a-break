@@ -45,6 +45,7 @@ app.get('/api/break/', function(req, res) {
 
 // Get All Users
 app.get('/api/users', function(req, res) {
+  console.log('server.js - api/users');
   User.getUsers(function(err, users) {
     if (err) {
       console.log('Could not retrieve All Users: ', err);
@@ -54,24 +55,25 @@ app.get('/api/users', function(req, res) {
 });
 
 // Create a route to get UserById!
-app.get('/api/users/:_id', function(req, res) {
-  // var userName = {'name': req.params.name};
+// app.get('/api/users/:_id', function(req, res) {
+//   // var userName = {'name': req.params.name};
 
-  User.getUserById(req.params._id, function(err, user) {
-    if (err) {
-      console.log('error: ', err);
-    }
+//   User.getUserById(req.params._id, function(err, user) {
+//     if (err) {
+//       console.log('error: ', err);
+//     }
 
-    res.json(user);
-  });
-});
+//     res.json(user);
+//   });
+// });
 
 // Create a route to get UserByName - DOES NOT WORK
 app.get('/api/users/:name', function(req, res) {
+  console.log('server.js - api/users/:name');
   // var userName = {'name': req.params.name};
 
   // console.log('Marcus is the userName: ', req.params.name);
-  User.getUserByName(req.params.userName, function(err, user) {
+  User.getUserByName(req.params.name, function(err, user) {
     if (err) {
       console.log('error: ', err);
     }

@@ -62,22 +62,22 @@ module.exports.updateUserPassWord = function(email, pass, options, callback) {
 
 
 // ** Dummy Data Instance **/
-// var marcus = new User({
-//   name: 'Marcus',
-//   email: 'marcussvehlak.code@gmail.com',
-//   password: 'asdf',
-//   phoneNumber: '925-787-9988',
-//   preferences: {
-//     breaks: 3,
-//     mental: 70,
-//     physical: 30,
-//   },
-//   completedTasks: [],
-// });
+var marcus = new User({
+  name: 'Marcus',
+  email: 'marcussvehlak.code@gmail.com',
+  password: 'asdf',
+  phoneNumber: '925-787-9988',
+  preferences: {
+    breaks: 3,
+    mental: 70,
+    physical: 30,
+  },
+  completedTasks: [],
+});
 
-// marcus.save(function(err) {
-//   if (err) {
-//     console.log('Could Not Save User, Marcus: ', err);
-//   // SAVE!
-//   }
-// });
+marcus.save(function(err) {
+  if (err) {
+    console.log('Could Not Save User, Marcus: ', err);
+  // SAVE!
+  }
+});

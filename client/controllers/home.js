@@ -1,4 +1,4 @@
-myApp.controller('home', function($scope, aBreak) {
+myApp.controller('home', function($scope, $location, aBreak, aUser) {
   $scope.break = {};
   // console.log(aBreak.getBreak());
     // Promise - so that getBreak() finishes retrieving 'aBreak'
@@ -17,4 +17,12 @@ myApp.controller('home', function($scope, aBreak) {
     });
   };
   getABreak();
+
+  var getAUser = function() {
+    $location.search('name', 'Marcus');
+    aUser.getUser().then(function(someUser) {
+      console.log('Home.js - Get a user:', someUser);
+    });
+  };
+  getAUser();
 });
