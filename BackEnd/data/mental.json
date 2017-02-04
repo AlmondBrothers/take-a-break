@@ -1,21 +1,26 @@
 [
   {
+    "type": "Mental",
     "title": "Breathe",
     "description": "Take 10 Deep Breaths, hold each breath for 3 seconds!"
   },
   {
+    "type": "Mental",
     "title": "Imagine",
     "description": "Close your eyes for 5 minutes and envision a place where you want to be or visit."
   },
   {
+    "type": "Mental",
     "title": "Vista",
     "description": "Find the nearest window and take 2 minutes to view the beauty of the world around you."
   },
   {
+    "type": "Mental",
     "title": "Listen",
     "description": "Listen to https://www.youtube.com/watch?v=m97KHKAo040"
   },
   {
+    "type": "Mental",
     "title": "Plan",
     "description": "Take 5 minutes to set a personal goal that you want to achieve this week."
   }
