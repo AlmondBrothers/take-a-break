@@ -4,7 +4,7 @@ myApp.factory('aBreak', function($http) {
   //   url: '/api/users/',
   // });
   var getBreak = function(callback) {
-    $http({
+    return $http({
       method: 'GET',
       url: '/api/break',
     }).then(function(aBreak) {
