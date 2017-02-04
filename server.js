@@ -14,8 +14,13 @@ app.use(bodyParser.urlencoded({extended: true}));
 // User = require('./BackEnd/models/users.js');
 // Break = require('./BackEnd/models/breaks.js');
 
-mongoose.connect('mongodb://localhost/takeABreak');
-var db = mongoose.connection;
+var db = mongoose.connect('mongodb://localhost/takeABreak');
+
+/* Line 23 causing multiple connections to run
+in our case 6 from what I've read it appears 5 is
+what is allowed. */
+
+//var db = mongoose.connection;
 autoIncrement.initialize(db);
 
 User = require('./BackEnd/models/users.js');
