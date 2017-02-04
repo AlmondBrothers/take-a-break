@@ -1,7 +1,7 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
-
+var autoIncrement = require('mongoose-auto-increment');
 var app = express();
 
 app.use(express.static(__dirname + '/client'));
@@ -11,17 +11,31 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 // Refer to the --> MONGO 'collection' table
 // ex: NAME_OF_COL = require('./UPDATE_ME.js');
-User = require('./BackEnd/models/users.js');
-Break = require('./BackEnd/models/breaks.js');
+// User = require('./BackEnd/models/users.js');
+// Break = require('./BackEnd/models/breaks.js');
 
 mongoose.connect('mongodb://localhost/takeABreak');
 var db = mongoose.connection;
+autoIncrement.initialize(db);
+
+User = require('./BackEnd/models/users.js');
+Break = require('./BackEnd/models/breaks.js');
 
 // require('.config')(app, express);
 // require('./config/routes.js')(app, express);
 
 app.get('/', function(req, res) {
   res.send('Hello World!');
+});
+
+// Get a Break !
+app.get('/api/break/', function(req, res) {
+  Break.getBreak(function(err, aBreak) {
+    if (err) {
+      console.log('Could Not retrieve a specific Break: ', err);
+    }
+    res.json(aBreak);
+  });
 });
 
 // Get All Users
