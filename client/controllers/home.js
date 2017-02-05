@@ -4,6 +4,8 @@ myApp.controller('home', function($scope, $location, aBreak) {
   $scope.mentalBreakCount = {Yes: 0, No: 0};
   $scope.physicalPercent = {Yes: 0, No: 0};
   $scope.mentalPercent = {Yes: 0, No: 0};
+  $scope.physicalPercentString = $scope.physicalPercent.Yes;
+  $scope.mentalPercentString = $scope.mentalPercent.Yes;
 
   // console.log(aBreak.getBreak());
     // Promise - so that getBreak() finishes retrieving 'aBreak'
@@ -37,17 +39,21 @@ myApp.controller('home', function($scope, $location, aBreak) {
     console.log('Type of Break is: ', breakType);
     if (breakType === 'Physical') {
       $scope.physicalBreakCount.Yes++;
-      $scope.physicalPercent.Yes =
-      ($scope.physicalBreakCount.Yes / ($scope.physicalBreakCount.Yes +
-        $scope.physicalBreakCount.No)) * 100;
+
+      $scope.physicalPercent.Yes = 
+      Math.round(($scope.physicalBreakCount.Yes / ($scope.physicalBreakCount.Yes + 
+        $scope.physicalBreakCount.No)) * 100);
+      
       $scope.physicalPercent.No = 100 - $scope.physicalPercent.Yes;
       document.getElementById("physical-yes").style.width = $scope.physicalPercent.Yes.toString() + '%';
       document.getElementById("physical-no").style.width = $scope.physicalPercent.No.toString() + '%';
     } else {
       $scope.mentalBreakCount.Yes++;
       $scope.mentalPercent.Yes =
-      ($scope.mentalBreakCount.Yes / ($scope.mentalBreakCount.Yes +
-        $scope.mentalBreakCount.No)) * 100;
+
+      Math.round(($scope.mentalBreakCount.Yes / ($scope.mentalBreakCount.Yes + 
+        $scope.mentalBreakCount.No)) * 100);
+      
       $scope.mentalPercent.No = 100 - $scope.mentalPercent.Yes;
       document.getElementById("mental-yes").style.width = $scope.mentalPercent.Yes.toString() + '%';
       document.getElementById("mental-no").style.width = $scope.mentalPercent.No.toString() + '%';
@@ -58,17 +64,21 @@ myApp.controller('home', function($scope, $location, aBreak) {
     breakType = $scope.break.type;
     if (breakType === 'Physical') {
       $scope.physicalBreakCount.No++;
-       $scope.physicalPercent.No =
-      ($scope.physicalBreakCount.No / ($scope.physicalBreakCount.Yes +
-        $scope.physicalBreakCount.No)) * 100;
+
+       $scope.physicalPercent.No = 
+      Math.round(($scope.physicalBreakCount.No / ($scope.physicalBreakCount.Yes + 
+        $scope.physicalBreakCount.No)) * 100);
+
       $scope.physicalPercent.Yes = 100 - $scope.physicalPercent.No;
       document.getElementById("physical-yes").style.width = $scope.physicalPercent.Yes.toString() + '%';
       document.getElementById("physical-no").style.width = $scope.physicalPercent.No.toString() + '%';
     } else {
       $scope.mentalBreakCount.No++;
        $scope.mentalPercent.No =
-      ($scope.mentalBreakCount.No / ($scope.mentalBreakCount.Yes +
-        $scope.mentalBreakCount.No)) * 100;
+
+      Math.round(($scope.mentalBreakCount.No / ($scope.mentalBreakCount.Yes + 
+        $scope.mentalBreakCount.No)) * 100);
+
       $scope.mentalPercent.Yes = 100 - $scope.mentalPercent.No;
       document.getElementById("mental-yes").style.width = $scope.mentalPercent.Yes.toString() + '%';
       document.getElementById("mental-no").style.width = $scope.mentalPercent.No.toString() + '%';
