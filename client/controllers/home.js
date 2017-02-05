@@ -18,11 +18,12 @@ myApp.controller('home', function($scope, $location, aBreak, aUser) {
   };
   getABreak();
 
-  var getAUser = function() {
-    $location.search('name', 'Marcus');
-    aUser.getUser().then(function(someUser) {
-      console.log('Home.js - Get a user:', someUser);
-    });
-  };
-  getAUser();
+  // TODO: Get User Data
+  // var getAUser = function() {
+  //   $location.search('name', 'Marcus');
+  //   aUser.getUser().then(function(someUser) {
+  //     console.log('Home.js - Get a user:', someUser);
+  //   });
+  // };
+  // getAUser();
 });
