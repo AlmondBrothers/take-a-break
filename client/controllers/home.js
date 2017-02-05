@@ -1,5 +1,10 @@
 myApp.controller('home', function($scope, $location, aBreak, aUser) {
   $scope.break = {};
+  $scope.physicalBreakCount = {Yes: 0, No: 0};
+  $scope.mentalBreakCount = {Yes: 0, No: 0};
+  $scope.physicalPercent = {Yes: 0, No: 0};
+  $scope.mentalPercent = {Yes: 0, No: 0};
+
   // console.log(aBreak.getBreak());
     // Promise - so that getBreak() finishes retrieving 'aBreak'
   var getABreak = function() {
@@ -7,23 +12,67 @@ myApp.controller('home', function($scope, $location, aBreak, aUser) {
     setTimeout(function() {
       getABreak();
       // mins * secs * millisecs
-    }, 1 * 60 * 1000);
+    }, 1 * 10 * 1000);
     // Need a promise, so getBreak() executes fully
     // Ensures $scope variables obtain 'data' from getBreak()
     aBreak.getBreak().then(function(someBreak) {
       console.log('Home.js - Get a Break: ', someBreak);
+      $scope.break.type = someBreak.type;
       $scope.break.title = someBreak.title;
       $scope.break.description = someBreak.description;
     });
   };
   getABreak();
 
-  // TODO: Get User Data
-  // var getAUser = function() {
-  //   $location.search('name', 'Marcus');
-  //   aUser.getUser().then(function(someUser) {
-  //     console.log('Home.js - Get a user:', someUser);
-  //   });
-  // };
-  // getAUser();
+  var getAUser = function() {
+    $location.search('name', 'Marcus');
+    aUser.getUser().then(function(someUser) {
+      console.log('Home.js - Get a user:', someUser);
+    });
+  };
+  getAUser();
+  
+  $scope.completeBreak = function(breakType) {
+    breakType = $scope.break.type;
+    console.log('Type of Break is: ', breakType);
+    if (breakType === 'Physical') {
+      $scope.physicalBreakCount.Yes++;
+      $scope.physicalPercent.Yes = 
+      ($scope.physicalBreakCount.Yes / ($scope.physicalBreakCount.Yes + 
+        $scope.physicalBreakCount.No)) * 100;
+      $scope.physicalPercent.No = 100 - $scope.physicalPercent.Yes;
+      document.getElementById("physical-yes").style.width = $scope.physicalPercent.Yes.toString() + '%';
+      document.getElementById("physical-no").style.width = $scope.physicalPercent.No.toString() + '%';
+    } else {
+      $scope.mentalBreakCount.Yes++;
+      $scope.mentalPercent.Yes =
+      ($scope.mentalBreakCount.Yes / ($scope.mentalBreakCount.Yes + 
+        $scope.mentalBreakCount.No)) * 100;
+      $scope.mentalPercent.No = 100 - $scope.mentalPercent.Yes;
+      document.getElementById("mental-yes").style.width = $scope.mentalPercent.Yes.toString() + '%';
+      document.getElementById("mental-no").style.width = $scope.mentalPercent.No.toString() + '%';
+    }
+  };
+
+  $scope.notCompleteBreak = function(breakType) {
+    breakType = $scope.break.type;
+    if (breakType === 'Physical') {
+      $scope.physicalBreakCount.No++;
+       $scope.physicalPercent.No = 
+      ($scope.physicalBreakCount.No / ($scope.physicalBreakCount.Yes + 
+        $scope.physicalBreakCount.No)) * 100;
+      $scope.physicalPercent.Yes = 100 - $scope.physicalPercent.No;
+      document.getElementById("physical-yes").style.width = $scope.physicalPercent.Yes.toString() + '%';
+      document.getElementById("physical-no").style.width = $scope.physicalPercent.No.toString() + '%';
+    } else {
+      $scope.mentalBreakCount.No++;
+       $scope.mentalPercent.No =
+      ($scope.mentalBreakCount.No / ($scope.mentalBreakCount.Yes + 
+        $scope.mentalBreakCount.No)) * 100;
+      $scope.mentalPercent.Yes = 100 - $scope.mentalPercent.No;
+      document.getElementById("mental-yes").style.width = $scope.mentalPercent.Yes.toString() + '%';
+      document.getElementById("mental-no").style.width = $scope.mentalPercent.No.toString() + '%';
+    }
+  };
+
 });
