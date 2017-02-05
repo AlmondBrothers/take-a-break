@@ -1,13 +1,35 @@
 <div>
-  <h2>Welcome back, Here is your Break!</h2>
-  <div>
+  <h2>Welcome back, here is your Break!</h2>
+  <!-- <div id="time">
+    <h1>Time</h1>
+  </div> -->
+  <div class="jumbotron">
+    <h1>{{break.title}}</h1>
+    <p>{{break.description}}</p>
+    <p><a class="btn btn-primary btn-lg" href="#" role="button">Completed</a></p><p><a class="btn btn-primary btn-lg" href="#" role="button">Skipped</a></p>
+  </div>
+  <!-- <div>
     <h2>{{break.title}}</h2>
     <p>{{break.description}}</p>
+  </div> -->
+  <div id="completed">
+    <h2>Mental Breakdown!</h2>
   </div>
-  <div id="time">
-    <h1>Time</h1>
+  <div class="progress">
+    <div class="progress-bar progress-bar-success" style="width: 35%">
+      <span class="sr-only">35% Complete (success)</span>
+    </div>
+    <div class="progress-bar progress-bar-warning progress-bar-info" style="width: 20%">
+      <span class="sr-only">20% Complete (warning)</span>
+    </div>
   </div>
-  <div id="timeline">
-    <h1>Timeline</h1>
-  </div>
+  <div id="completed">
+    <h2>Physical Breakdown!</h2>
+  <div class="progress">
+    <div class="progress-bar progress-bar-success" style="width: 35%">
+      <span class="sr-only">35% Complete (success)</span>
+    </div>
+    <div class="progress-bar progress-bar-warning progress-bar-info" style="width: 20%">
+      <span class="sr-only">20% Complete (warning)</span>
+    </div>
 </div>
