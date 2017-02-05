@@ -40,12 +40,12 @@ Break.create(mentalBreaks, function(err, breaks) {
 });
 
 // Physical Break JSON upload
-Break.create(physicalBreaks, function(err, breaks) {
-  if (err) {
-    return console.log(err);
-  }
-  console.log('Number of Physical Breaks: ', breaks.length);
-});
+// Break.create(physicalBreaks, function(err, breaks) {
+//   if (err) {
+//     return console.log(err);
+//   }
+//   console.log('Number of Physical Breaks: ', breaks.length);
+// });
 
 function randNumGen() {
   // TODO: change '10' to 'breaks.length'...

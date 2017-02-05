@@ -4,32 +4,57 @@
     <h1>Time</h1>
   </div> -->
   <div class="jumbotron">
+    <h2 ng-model="breakType">{{break.type}}</h2>
     <h1>{{break.title}}</h1>
     <p>{{break.description}}</p>
-    <p><a class="btn btn-primary btn-lg" href="#" role="button">Completed</a></p><p><a class="btn btn-primary btn-lg" href="#" role="button">Skipped</a></p>
+    <p>
+      <a class="btn btn-primary btn-lg" role="button" ng-click="completeBreak($breakType)">Completed</a>
+    </p>
+    <p>
+      <a class="btn btn-primary btn-lg" role="button" ng-click="notCompleteBreak($breakType)">Skipped</a>
+    </p>
   </div>
-  <!-- <div>
-    <h2>{{break.title}}</h2>
-    <p>{{break.description}}</p>
-  </div> -->
+  <table id="break-count">
+    <tr>
+      <th>Break Type</th>
+      <th>Completed</th> 
+      <th>Not Completed</th>
+      <th>percent yes</th>
+      <th>percent no</th>
+  </tr>
+  <tr>
+    <td>Physical</td>
+    <td>{{physicalBreakCount.Yes}}</td>
+    <td>{{physicalBreakCount.No}}</td>
+    <td>{{physicalPercent.Yes}}</td>
+    <td>{{physicalPercent.No}}</td>
+  </tr>
+  <tr>
+    <td>Mental</td>
+    <td>{{mentalBreakCount.Yes}}</td>
+    <td>{{mentalBreakCount.No}}</td>
+    <td>{{mentalPercent.Yes}}</td>
+    <td>{{mentalPercent.No}}</td>
+  </tr>
+</table>
   <div id="completed">
     <h2>Mental Breakdown!</h2>
   </div>
   <div class="progress">
-    <div class="progress-bar progress-bar-success" style="width: 35%">
-      <span class="sr-only">35% Complete (success)</span>
+    <div id="mental-yes" class="progress-bar progress-bar-success" style="width: 0%">
+      <!-- <span class="sr-only">35% Complete (success)</span> -->
     </div>
-    <div class="progress-bar progress-bar-warning progress-bar-info" style="width: 20%">
-      <span class="sr-only">20% Complete (warning)</span>
+    <div id="mental-no" class="progress-bar progress-bar-warning progress-bar-info" style="width: 0%">
+      <!-- <span class="sr-only">20% Complete (warning)</span> -->
     </div>
   </div>
   <div id="completed">
     <h2>Physical Breakdown!</h2>
   <div class="progress">
-    <div class="progress-bar progress-bar-success" style="width: 35%">
-      <span class="sr-only">35% Complete (success)</span>
+    <div id="physical-yes" class="progress-bar progress-bar-success" style="width: 0%">
+      <!-- <span class="sr-only">35% Complete (success)</span> -->
     </div>
-    <div class="progress-bar progress-bar-warning progress-bar-info" style="width: 20%">
-      <span class="sr-only">20% Complete (warning)</span>
+    <div id="physical-no" class="progress-bar progress-bar-warning progress-bar-info" style="width: 0%">
+      <!-- <span class="sr-only">20% Complete (warning)</span> -->
     </div>
 </div>
