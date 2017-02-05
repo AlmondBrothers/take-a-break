@@ -1,14 +1,10 @@
 var mongoose = require('mongoose');
 var autoIncrement = require('mongoose-auto-increment');
 
-// autoIncrement.initialize(connection);
-
 var breakSchema = mongoose.Schema({
-  // _id: {type: Number, required: true}
   type: {type: String, required: true},
   title: {type: String, required: true, unique: true},
   description: {type: String, required: true, unique: true},
-  // seq: {}
 });
 
 breakSchema.plugin(autoIncrement.plugin, {
@@ -30,22 +26,13 @@ Break.create(mentalBreaks, function(err, breaks) {
   if (err) {
     return console.log(err);
   }
-  // console.log('Number of Mental Breaks: ', breaks.length);
+  // Create Physical Break JSON upload
   Break.create(physicalBreaks, function(err, breaks) {
-  if (err) {
-    return console.log(err);
-  }
-  console.log('Number of Physical Breaks: ', breaks.length);
+    if (err) {
+      return console.log(err);
+    }
   });
 });
-
-// Physical Break JSON upload
-// Break.create(physicalBreaks, function(err, breaks) {
-//   if (err) {
-//     return console.log(err);
-//   }
-//   console.log('Number of Physical Breaks: ', breaks.length);
-// });
 
 function randNumGen() {
   // TODO: change '10' to 'breaks.length'...
