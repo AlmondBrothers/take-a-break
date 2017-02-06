@@ -14,33 +14,6 @@
       <a class="btn btn-primary btn-lg" role="button" ng-click="notCompleteBreak($breakType)">Skipped</a>
     </p>
   </div>
-  <table id="break-count" class="table">
-    <thead>
-      <tr>
-        <th>Break Type</th>
-        <th>Completed</th>
-        <th>Not Completed</th>
-        <th>% Complete</th>
-        <th>% Incomplete</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Physical</td>
-        <td>{{physicalBreakCount.Yes}}</td>
-        <td>{{physicalBreakCount.No}}</td>
-        <td>{{physicalPercent.Yes}}</td>
-        <td>{{physicalPercent.No}}</td>
-      </tr>
-      <tr>
-        <td>Mental</td>
-        <td>{{mentalBreakCount.Yes}}</td>
-        <td>{{mentalBreakCount.No}}</td>
-        <td>{{mentalPercent.Yes}}</td>
-        <td>{{mentalPercent.No}}</td>
-      </tr>
-    </tbody>
-</table>
   <div id="completed">
     <h2>Mental Breakdown{{': ' + mentalPercent.Yes + '% Complete!'}}</h2>
   </div>
@@ -58,3 +31,30 @@
     <div id="physical-no" class="progress-bar progress-bar-warning progress-bar-info" style="width: 0%">
     </div>
 </div>
+  <table id="break-count" class="table">
+<thead>
+  <tr>
+    <th>Break Type</th>
+    <th>Completed</th>
+    <th>Not Completed</th>
+    <th>% Complete</th>
+    <th>% Incomplete</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Physical</td>
+      <td>{{physicalBreakCount.Yes}}</td>
+      <td>{{physicalBreakCount.No}}</td>
+      <td>{{physicalPercent.Yes}}</td>
+      <td>{{physicalPercent.No}}</td>
+    </tr>
+    <tr>
+      <td>Mental</td>
+      <td>{{mentalBreakCount.Yes}}</td>
+      <td>{{mentalBreakCount.No}}</td>
+      <td>{{mentalPercent.Yes}}</td>
+      <td>{{mentalPercent.No}}</td>
+    </tr>
+  </tbody>
+</table>
