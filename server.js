@@ -40,21 +40,23 @@ app.get('/api/break/', function(req, res) {
 // });
 
 // TODO: Create a route to get UserById!
-// app.get('/api/users/:_id', function(req, res) {
-//   // var userName = {'name': req.params.name};
+app.get('/api/users/:email', function(req, res) {
+  // var userName = {'name': req.params.name};
+  console.log('Request to /api/users/:email successful!');
+  User.getUserByEmail(req.params.email, function(err, user) {
+    console.log('User is: ', user);
+    if (err) {
+      console.log('User error: ', err);
+    }
 
-//   User.getUserById(req.params._id, function(err, user) {
-//     if (err) {
-//       console.log('error: ', err);
-//     }
-
-//     res.json(user);
-//   });
-// });
+    res.json(user);
+  });
+});
 
 // Create a route to POST a new user!
 app.post('/api/users', function(req, res) {
   // Obtain all the data 'requested' from the 'client'
+  console.log('Request to /api/users successful!');
   var newUser = req.body;
 
   User.addUser(newUser, function(err, newUser) {
