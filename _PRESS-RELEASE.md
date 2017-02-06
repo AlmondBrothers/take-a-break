@@ -16,29 +16,27 @@ Oh, and I also like to write press-releases in what I call "Oprah-speak" for mai
 Once the project moves into development, the press release can be used as a touchstone; a guiding light. The product team can ask themselves, "Are we building what is in the press release?" If they find they're spending time building things that aren't in the press release (overbuilding), they need to ask themselves why. This keeps product development focused on achieving the customer benefits and not building extraneous stuff that takes longer to build, takes resources to maintain, and doesn't provide real customer benefit (at least not enough to warrant inclusion in the press release).
  -->
  
-## Heading ##
-  "Take a Break"
+## Take a Break ##
 
-## Sub-Heading ##
-  "Take a break.  Get more done."
+## Take a break.  Get more done. ##
 
 ## Summary ##
-  "An often forgotten aspect of remaining productive is maintaining a healthy mind and body.  By taking periodic breaks through out the day you'll feel better about yourself while getting work done.  Take a break will give you 5 minute activities based on what's important to you to help improve you mentally, physicall and spiritually...  Live long and produce."
+An often forgotten aspect of remaining productive is maintaining a healthy mind and body.  By taking periodic breaks through out the day you'll feel better about yourself while getting work done.  Take a break will give you 5 minute activities based on what's important to you to help improve you mentally, physicall and spiritually...  Live long and produce.
 
 ## Problem ##
-  "People often get bogged down in work leading to burn out and unhappiness."
+People often get bogged down in work leading to burn out and unhappiness.
 
 ## Solution ##
-  "By suggesting 5 minute activities throughout your day, Take a Break will keep you on track to maintain a healthy mindset."
+By suggesting 5 minute activities throughout your day, Take a Break will keep you on track to maintain a healthy mindset.
 
 ## Quote from You ##
   "We believe Take a Break can change the way the world works." - Svey
 
 ## How to Get Started ##
-  "Sign in via Google and get ready to Break the routine!"
+Sign in via Google and get ready to Break the routine!
 
-## Customer Quote ##
+## What people are saying ##
   "My life started to become unmanageable.  All I needed to do was Take a Break." -Anonymous
 
-## Closing and Call to Action ##
-  "Tired of being tired?  Take a break.  Sign in to wwww.takeabreak.com and change up your routine today."
+## Break Out ##
+Tired of being tired?  Take a break.  Sign in to wwww.takeabreak.com and change up your routine today.
