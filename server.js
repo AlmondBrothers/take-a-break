@@ -4,11 +4,16 @@ var bodyParser = require('body-parser');
 var autoIncrement = require('mongoose-auto-increment');
 var app = express();
 
+var mongo_uri = ENV['PROD_MONGODB'];
+
 app.use(express.static(__dirname + '/client'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-var db = mongoose.connect('mongodb://localhost/takeABreak');
+// var db = mongoose.connect('mongodb://localhost/takeABreak');
+
+var db = mongoose.connect(mongo_uri);
+
 autoIncrement.initialize(db);
 
 User = require('./BackEnd/models/users.js');
