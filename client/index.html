@@ -41,9 +41,35 @@
         var id_token = googleUser.getAuthResponse().id_token;
         console.log('ID token is what we send to back-end');
         console.log('ID Token: ' + id_token);
+        var url = '/api/users/' + profile.getEmail();
+        var userRoute = '/api/users';
+        var user = {
+          name: profile.getName(),
+          email: profile.getEmail(),
+        };
         if (id_token) {
-          window.location = 'old-index.html';
-        }
+          // Upon Successful Google Auth - AJAX Calls
+          $.ajax({
+            type: 'GET',
+            url: url,
+          })
+          .done(function(data) {
+            console.log('GET data passed is: ', data);
+            // check if User Email Account exists in DB
+            if (data) {
+              return window.location = 'old-index.html';
+            } // end of if
+
+            $.ajax({
+                type: 'POST',
+                url: userRoute,
+                data: user,
+              })
+              .done(function() {
+                window.location = 'old-index.html';
+              });
+          });
+        } // end of if
       };
 
       gapi.load('auth2', function() {
