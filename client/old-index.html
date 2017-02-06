@@ -7,6 +7,7 @@
 
   <!-- placement of clientID here to enable access to Google sign-in API features -->
   <meta name="google-signin-client_id" content="615892834166-ivohjnsuejg5llvsn8khqcqher5qfbpm.apps.googleusercontent.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- api js: core JS library -->
   <script src="https://apis.google.com/js/platform.js"></script>
@@ -14,14 +15,17 @@
   <title>Take a Break</title>
 </head>
 <body>
-  <h1>Take a Break</h1>
-  <ul class="nav nav-pills">
-  <li role="presentation" class="active"><a href="#/home">Home</a></li>
-  <li role="presentation"><a href="/" onclick="signOut();">Logout</a></li>
-</ul>
-  </ul>
-  
-  <div ng-view></div>
+  <div>
+    <ul class="nav nav-pills">
+      <li role="presentation" class="active"><a href="#/home">Home</a></li>
+      <li role="presentation"><a href="/" onclick="signOut();">Logout</a></li>
+    </ul>
+  </div>
+  <div align = "center">
+    <h1>Take a Break</h1>
+  </div>
+
+  <div align = "center" ng-view style = "margin: 5%"></div>
 
   <!-- cdns -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
