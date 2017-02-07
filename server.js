@@ -4,9 +4,9 @@ var bodyParser = require('body-parser');
 var autoIncrement = require('mongoose-auto-increment');
 var app = express();
 
-app.use(express.static(__dirname + '/client'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static(__dirname + '/client'));
 
 var db = mongoose.connect('mongodb://localhost/takeABreak');
 autoIncrement.initialize(db);
