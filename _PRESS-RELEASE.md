@@ -16,49 +16,27 @@ Oh, and I also like to write press-releases in what I call "Oprah-speak" for mai
 Once the project moves into development, the press release can be used as a touchstone; a guiding light. The product team can ask themselves, "Are we building what is in the press release?" If they find they're spending time building things that aren't in the press release (overbuilding), they need to ask themselves why. This keeps product development focused on achieving the customer benefits and not building extraneous stuff that takes longer to build, takes resources to maintain, and doesn't provide real customer benefit (at least not enough to warrant inclusion in the press release).
  -->
  
-## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+## Take a Break ##
 
-  "Take a Break"
-
-## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
-
-  "Take a break.  Get more done."
+## Take a break.  Get more done. ##
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
-
-  "An often forgotten aspect of remaining productive is maintaining a healthy mind and body.  By taking periodic breaks through out the day you'll feel better about yourself while getting work done.  Take a break will give you 5 minute activities based on what's important to you to help improve you mentally, physicall and spiritually...  Live long and produce."
+An often forgotten aspect of remaining productive is maintaining a healthy mind and body.  By taking periodic breaks through out the day you'll feel better about yourself while getting work done.  Take a break will give you 5 minute activities based on what's important to you to help improve you mentally, physicall and spiritually...  Live long and produce.
 
 ## Problem ##
-  > Describe the problem your product solves.
-
-  "People often get bogged down in work leading to burn out and unhappiness."
+People often get bogged down in work leading to burn out and unhappiness.
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
-
-  "By suggesting 5 minute activities throughout your day, Take a Break will keep you on track to maintain a healthy mindset."
+By suggesting 5 minute activities throughout your day, Take a Break will keep you on track to maintain a healthy mindset.
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
-
   "We believe Take a Break can change the way the world works." - Svey
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+Sign in via Google and get ready to Break the routine!
 
-  "Sign in via Google, tell us what's important to you, and get ready to Break the routine."
-
-## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
-
+## What people are saying ##
   "My life started to become unmanageable.  All I needed to do was Take a Break." -Anonymous
 
-## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
-
-  "Tired of being tired?  Take a break.  Sign in to wwww.takeabreak.com and change up your routine today."
-
-  (insert sample break)
+## Break Out ##
+Tired of being tired?  Take a break.  Sign in to wwww.takeabreak.com and change up your routine today.

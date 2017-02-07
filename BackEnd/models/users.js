@@ -3,12 +3,13 @@ var mongoose = require('mongoose');
 var userSchema = mongoose.Schema({
   name: {type: String, required: true},
   email: {type: String, required: true, unique: true},
-  password: {type: String, required: true},
-  phoneNumber: {type: String, required: true},
+  token: {type: String},
+  password: {type: String},
+  phoneNumber: {type: String},
   preferences: {
-    breaks: {type: Number, required: true},
-    mental: {type: Number, required: true},
-    physical: {type: Number, required: true},
+    breaks: {type: Number},
+    mental: {type: Number},
+    physical: {type: Number},
   },
   completedTasks: [
     // type: mental or physical
@@ -28,11 +29,11 @@ module.exports.getUserById = function(id, callback) {
   User.findById(id, callback);
 };
 
-// '/api/users/:name' in server.js
-module.exports.getUserByName = function(userName, callback) {
-  var specificUser = {name: userName};
-
-  User.findOne(specificUser, callback);
+// '/api/users/:email' in server.js
+module.exports.getUserByEmail = function(email, callback) {
+  var specificEmail = {email: email};
+  console.log('specificEmail is: ', specificEmail);
+  User.findOne(specificEmail, callback);
 };
 
 // '/api/users/' in server.js
@@ -43,21 +44,21 @@ module.exports.addUser = function(userName, callback) {
 };
 
 // ** Dummy Data Instance **/
-var marcus = new User({
-  name: 'Hello',
-  email: 'helloworld@gmail.com',
-  password: 'asdf',
-  phoneNumber: '925-666-7777',
-  preferences: {
-    breaks: 3,
-    mental: 70,
-    physical: 30,
-  },
-  completedTasks: [],
-});
+// var marcus = new User({
+//   name: 'Hello',
+//   email: 'helloworld@gmail.com',
+//   password: 'asdf',
+//   phoneNumber: '925-666-7777',
+//   preferences: {
+//     breaks: 3,
+//     mental: 70,
+//     physical: 30,
+//   },
+//   completedTasks: [],
+// });
 
-marcus.save(function(err) {
-  if (err) {
-    console.log('Could Not Save This Specific User: ', err);
-  }
-});
+// marcus.save(function(err) {
+//   if (err) {
+//     console.log('Could Not Save This Specific User: ', err);
+//   }
+// });

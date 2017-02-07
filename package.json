@@ -7,6 +7,10 @@
     "test": "test",
     "start": "node server.js"
   },
+  "engines" : {
+    "node": "^6.9.1",
+    "npm" : "^3.10.8"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AlmondBrothers/TakeABreak.git"
