@@ -1,12 +1,6 @@
 // app/routes.js
 
-var router = require('express').Router();
-
-//routes for user
-router.get('/login', controller.users.get);
-
-module.exports = function(app, passport) {
-
+module.exports = function(app, passport){
     // route for home page
     app.get('/', function(req, res) {
         res.render('index.html'); // load the index.ejs file

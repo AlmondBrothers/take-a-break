@@ -1,6 +1,7 @@
 // config/passport.js
 
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+console.log(GoogleStrategy);
 
 // load up the user model
 //var User       = require('../app/models/user');
