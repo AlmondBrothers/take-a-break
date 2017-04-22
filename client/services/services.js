@@ -1,16 +1,10 @@
 // Factory Service
-myApp.factory('aBreak', function($http) {
-  var getBreak = function(callback) {
+myApp.factory('aBreak', function ($http) {
+  const getBreak = () => {
     return $http({
       method: 'GET',
       url: '/api/break',
-    }).then(function(aBreak) {
-      console.log('Here is a break: ', aBreak.data[0]);
-      return aBreak.data[0];
-    });
+    }).then(res => res.data[0]);
   };
-
-  return {
-    getBreak: getBreak,
-  };
+  return { getBreak };
 });
