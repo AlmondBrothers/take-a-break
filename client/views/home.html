@@ -1,37 +1,25 @@
-<div>
-  <h2>Welcome back, here is your Break!</h2>
-  <!-- <div id="time">
-    <h1>Time</h1>
-  </div> -->
-  <div class="jumbotron">
-    <h2 ng-model="breakType">{{break.type}}</h2>
-    <h1>{{break.title}}</h1>
-    <p>{{break.description}}</p>
-    <p>
-      <a class="btn btn-primary btn-lg" role="button" ng-click="completeBreak($breakType)">Completed</a>
-    </p>
-    <p>
-      <a class="btn btn-primary btn-lg" role="button" ng-click="notCompleteBreak($breakType)">Skipped</a>
-    </p>
-  </div>
-  <div id="completed">
-    <h2>Mental Breakdown{{': ' + mentalPercent.Yes + '% Complete!'}}</h2>
-  </div>
-  <div class="progress">
-    <div id="mental-yes" class="progress-bar progress-bar-success" style="width: 0%">
-    </div>
-    <div id="mental-no" class="progress-bar progress-bar-warning progress-bar-info" style="width: 0%">
-    </div>
-  </div>
-  <div id="completed">
-    <h2>Physical Breakdown{{': ' + physicalPercent.Yes + '% Complete!'}}</h2>
-  <div class="progress">
-    <div id="physical-yes" class="progress-bar progress-bar-success" style="width: 0%">
-    </div>
-    <div id="physical-no" class="progress-bar progress-bar-warning progress-bar-info" style="width: 0%">
-    </div>
+<a href="/logout" class="btn btn-default btn-sm">Logout</a> 
+<div class="jumbotron">
+  <h2 ng-model="breakType">{{break.type}}</h2>
+  <h1>{{break.title}}</h1>
+  <p>{{break.description}}</p>
+    <a class="btn btn-primary btn-lg" role="button" ng-click="completeBreak($breakType)">Completed</a>
+    <a class="btn btn-primary btn-lg" role="button" ng-click="notCompleteBreak($breakType)">Skipped</a>
 </div>
-  <table id="break-count" class="table">
+<div id="completed">
+  <h2>Mental Breakdown: {{mentalPercent.Yes}}% complete</h2>
+  <div class="progress">
+    <div id="mental-yes" class="progress progress-bar progress-bar-success" style="width: 0%"></div>
+    <div id="mental-no" class="progress-bar progress-bar-warning progress-bar-info" style="width: 0%"></div>
+  </div>
+</div>
+<div id="completed">
+  <h2>Physical Breakdown{{': ' + physicalPercent.Yes + '% Complete!'}}</h2>
+  <div class="progress">
+    <div id="physical-yes" class="progress-bar progress-bar-success" style="width: 0%"></div>
+    <div id="physical-no" class="progress-bar progress-bar-warning progress-bar-info" style="width: 0%"></div>
+</div>
+<table id="break-count" class="table">
 <thead>
   <tr>
     <th>Break Type</th>
@@ -40,21 +28,21 @@
     <th>% Complete</th>
     <th>% Incomplete</th>
   </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Physical</td>
-      <td>{{physicalBreakCount.Yes}}</td>
-      <td>{{physicalBreakCount.No}}</td>
-      <td>{{physicalPercent.Yes}}</td>
-      <td>{{physicalPercent.No}}</td>
-    </tr>
-    <tr>
-      <td>Mental</td>
-      <td>{{mentalBreakCount.Yes}}</td>
-      <td>{{mentalBreakCount.No}}</td>
-      <td>{{mentalPercent.Yes}}</td>
-      <td>{{mentalPercent.No}}</td>
-    </tr>
-  </tbody>
+</thead>
+<tbody>
+  <tr>
+    <td>Physical</td>
+    <td>{{physicalBreakCount.Yes}}</td>
+    <td>{{physicalBreakCount.No}}</td>
+    <td>{{physicalPercent.Yes}}</td>
+    <td>{{physicalPercent.No}}</td>
+  </tr>
+  <tr>
+    <td>Mental</td>
+    <td>{{mentalBreakCount.Yes}}</td>
+    <td>{{mentalBreakCount.No}}</td>
+    <td>{{mentalPercent.Yes}}</td>
+    <td>{{mentalPercent.No}}</td>
+  </tr>
+</tbody>
 </table>
