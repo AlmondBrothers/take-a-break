@@ -6,6 +6,11 @@ myApp.config(function($routeProvider, $locationProvider) {
       templateUrl: '/views/home.html',
       reloadOnSearch: false,
     })
+    // .when('/auth/google' {
+    //   controller: 'home',
+    //   templateUrl: '/views/home.html',
+    //   reloadOnSearch: false
+    // })
     .otherwise({
       redirectTo: '/',
     });
