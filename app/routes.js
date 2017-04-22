@@ -12,16 +12,16 @@ module.exports = function(app, passport){
     // route for processing the signup form
 
     // route for showing the profile page
-    // app.get('/profile', isLoggedIn, function(req, res) {
-    //     res.render('profile.ejs', {
-    //         user : req.user // get the user out of session and pass to template
-    //     });
-    // });
+    app.get('/profile', isLoggedIn, function(req, res) {
+        res.render('profile.ejs', {
+            user : req.user // get the user out of session and pass to template
+        });
+    });
 
     // route for logging out
     app.get('/logout', function(req, res) {
         req.logout();
-        res.redirect('/');
+        res.redirect('/home');
     });
 
     // send to google to do the authentication
@@ -32,7 +32,7 @@ module.exports = function(app, passport){
     // the callback after google has authenticated the user
     app.get('/auth/google/callback',
             passport.authenticate('google', {
-                    successRedirect : '/profile',
+                    successRedirect : '/',
                     failureRedirect : '/'
             }));
 
