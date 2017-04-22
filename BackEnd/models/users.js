@@ -42,23 +42,3 @@ module.exports.addUser = function(userName, callback) {
   // callback in 'server.js' should be function (err, userName)
   User.create(userName, callback);
 };
-
-// ** Dummy Data Instance **/
-// var marcus = new User({
-//   name: 'Hello',
-//   email: 'helloworld@gmail.com',
-//   password: 'asdf',
-//   phoneNumber: '925-666-7777',
-//   preferences: {
-//     breaks: 3,
-//     mental: 70,
-//     physical: 30,
-//   },
-//   completedTasks: [],
-// });
-
-// marcus.save(function(err) {
-//   if (err) {
-//     console.log('Could Not Save This Specific User: ', err);
-//   }
-// });

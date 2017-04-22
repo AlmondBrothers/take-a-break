@@ -1,88 +1,42 @@
-<!-- O auth client ID -->
-<!-- 615892834166-ivohjnsuejg5llvsn8khqcqher5qfbpm.apps.googleusercontent.com -->
+<html ng-app="myApp">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> 
 
-<html lang="en">
-  <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <meta name="google-signin-scope" content="profile email">
+  <title>Take a Break</title>
+</head>
+<body>
+  <div>
+    <a href="/auth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google</a>
+    <ul class="nav nav-pills">
+      <li role="presentation" class="active"><a href="#/home">Home</a></li>
+      <li role="presentation"><a href="/" onclick="signOut();">Logout</a></li>
+    </ul>
+  </div>
+  <div align = "center">
+    <h1>Take a Break</h1>
+  </div>
 
-    <!-- placement of clientID here to enable access to Google sign-in API features -->
-    <meta name="google-signin-client_id" content="615892834166-ivohjnsuejg5llvsn8khqcqher5qfbpm.apps.googleusercontent.com">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <div align = "center" ng-view style = "margin: 5%"></div>
 
-    <!-- api js: core JS library -->
-    <script src="https://apis.google.com/js/platform.js"></script>
-  </head>
-  <body>
-    <div class= "jumbotron" align = "center" >
-<!--     <div align = "center"> -->
-      <h2>Sign In</h2>
+  <!-- cdns -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-      <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-    </div>
+  <!-- app module -->
+  <script src="app.js"></script>
 
-    <script>
-      function onSignIn(googleUser) {
-        // Useful data for your client-side scripts:
-        var profile = googleUser.getBasicProfile();
-        // profile gets profile of user. We can create a user object with the following info:
+  <!-- constrollers -->
+  <script src="/controllers/home.js"></script>
+  
+  <!-- services -->
+  <script src="/services/services.js"></script>
 
-        // console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-        // console.log('Full Name: ' + profile.getName());
-        // console.log('Given Name: ' + profile.getGivenName());
-        // console.log('Family Name: ' + profile.getFamilyName());
-        // console.log("Image URL: " + profile.getImageUrl());
-        // console.log("Email: " + profile.getEmail());
-
-        // The ID token you need to pass to your backend:
-        var id_token = googleUser.getAuthResponse().id_token;
-        console.log('ID token is what we send to back-end');
-        console.log('ID Token: ' + id_token);
-        var url = '/api/users/' + profile.getEmail();
-        var userRoute = '/api/users';
-        var user = {
-          name: profile.getName(),
-          email: profile.getEmail(),
-        };
-        if (id_token) {
-          // Upon Successful Google Auth - AJAX Calls
-          $.ajax({
-            type: 'GET',
-            url: url,
-          })
-          .done(function(data) {
-            console.log('GET data passed is: ', data);
-            // check if User Email Account exists in DB
-            if (data) {
-              return window.location = 'old-index.html';
-            } // end of if
-
-            $.ajax({
-                type: 'POST',
-                url: userRoute,
-                data: user,
-              })
-              .done(function() {
-                window.location = 'old-index.html';
-              });
-          });
-        } // end of if
-      };
-
-      gapi.load('auth2', function() {
-        gapi.auth2.init();
-      });
-
-      function signOut() {
-        var auth2 = gapi.auth2.getAuthInstance();
-        auth2.signOut().then(function() {
-          console.log('User signed out.');
-        });
-      };
-
-    </script>
-  </body>
+</body>
 </html>
