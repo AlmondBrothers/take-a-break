@@ -7,6 +7,9 @@ const path = require('path');
 
 const app = express();
 const uri = process.env.MONGODB_URI;
+
+console.log(uri)
+
 const db = mongoose.connect(uri);
 
 autoIncrement.initialize(db);
