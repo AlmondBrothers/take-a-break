@@ -6,7 +6,9 @@ const passport = require('passport');
 const path = require('path');
 
 const app = express();
-const db = mongoose.connect('mongodb://localhost/takeABreak');
+const uri = process.env.MONGODB_URI;
+
+const db = mongoose.connect(uri);
 
 autoIncrement.initialize(db);
 require('./server/models/breaks');
@@ -22,5 +24,5 @@ require('./server/routes')(app, passport, Break);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.listen(8000);
+app.listen(process.env.PORT || 8000);
 module.exports = app;
