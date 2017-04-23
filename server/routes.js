@@ -1,4 +1,4 @@
-module.exports = (app, passport) => {
+module.exports = (app, passport, Break) => {
   // route for home page
   app.get('/', (req, res) => {
     res.render('index.html'); // load the index.ejs file
@@ -12,7 +12,7 @@ module.exports = (app, passport) => {
   // route for logging out
   app.get('/logout', (req, res) => {
     req.logout();
-    res.redirect('/home');
+    res.redirect('/');
   });
   // send to google to do the authentication
   // profile gets us their basic information including their name
@@ -23,9 +23,16 @@ module.exports = (app, passport) => {
   // the callback after google has authenticated the user
   app.get('/auth/google/callback',
     passport.authenticate('google', {
-      successRedirect: '/',
+      successRedirect: '/#/home',
       failureRedirect: '/'
   }));
+
+  app.get('/api/break', (req, res) => {
+    Break.getBreak((err, randomBreak) => {
+      if (err) console.log(err);
+      res.json(randomBreak);
+    });
+  });
 };
 
 // route middleware to make sure a user is logged in

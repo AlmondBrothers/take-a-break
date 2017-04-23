@@ -1,5 +1,5 @@
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-const User = require('../BackEnd/models/users');
+const User = require('../server/models/users');
 // const Break = require('./BackEnd/models/breaks.js');
 // load the auth variables
 const configAuth = require('./auth');

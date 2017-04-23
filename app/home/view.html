@@ -1,0 +1,61 @@
+<a href="/logout" class="btn btn-default btn-sm">Logout</a> 
+<div class="jumbotron">
+  <h2 ng-model="breakType">{{break.type}}</h2>
+  <h1>{{break.title}}</h1>
+  <p>{{break.description}}</p>
+    <a class="btn btn-primary btn-lg" role="button" ng-click="completedBreak($breakType)">Completed</a>
+    <a class="btn btn-primary btn-lg" role="button" ng-click="skippedBreak($breakType)">Skipped</a>
+</div>
+<div>
+  <h2>Mental Breakdown: {{percent(mentalBreaks.Yes, mentalBreaks.No) || 0}}% Complete!</h2>
+  <div class="progress">
+    <div
+      class="progress-bar progress-bar-success"
+      ng-style="{'width': percent(mentalBreaks.Yes, mentalBreaks.No) + '%'}"
+    ></div>
+    <div
+      class="progress-bar progress-bar-warning progress-bar-info"
+      ng-style="{'width': percent(mentalBreaks.No, mentalBreaks.Yes) + '%'}"
+    ></div>
+  </div>
+</div>
+<div>
+  <h2>Physical Breakdown: {{percent(physicalBreaks.Yes, physicalBreaks.No) || 0}}% Complete!</h2>
+  <div class="progress">
+    <div
+      class="progress-bar progress-bar-success"
+      ng-style="{'width': percent(physicalBreaks.Yes, physicalBreaks.No) + '%'}"
+    ></div>
+    <div
+      class="progress-bar progress-bar-warning progress-bar-info"
+      ng-style="{'width': percent(physicalBreaks.No, physicalBreaks.Yes) + '%'}"
+    ></div>
+  </div>
+</div>
+<table id="break-count" class="table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Completed</th>
+      <th>Not Completed</th>
+      <th>% Complete</th>
+      <th>% Incomplete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Physical</td>
+      <td>{{physicalBreaks.Yes}}</td>
+      <td>{{physicalBreaks.No}}</td>
+      <td>{{percent(physicalBreaks.Yes, physicalBreaks.No) || 0}}</td>
+      <td>{{percent(physicalBreaks.No, physicalBreaks.Yes) || 0}}</td>
+    </tr>
+    <tr>
+      <td>Mental</td>
+      <td>{{mentalBreaks.Yes}}</td>
+      <td>{{mentalBreaks.No}}</td>
+      <td>{{percent(mentalBreaks.Yes, mentalBreaks.No) || 0}}</td>
+      <td>{{percent(mentalBreaks.No, mentalBreaks.Yes) || 0}}</td>
+    </tr>
+  </tbody>
+</table>
