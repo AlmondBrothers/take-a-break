@@ -19,26 +19,23 @@ const userSchema = mongoose.Schema({
 
 const User = module.exports = mongoose.model('User', userSchema);
 
-// '/api/users/' in server.js
-module.exports.getUsers = function (callback, limit) {
+User.getUsers = function (callback, limit) {
   User.find(callback).limit(limit);
 };
 
-// '/api/users/:id - http://mongoosejs.com/docs/api.html#model_Model.findById
-module.exports.getUserById = function (id, callback) {
+// '/api/users/:id'
+User.getUserById = function (id, callback) {
   User.findById(id, callback);
 };
 
-// '/api/users/:email' in server.js
-module.exports.getUserByEmail = function (email, callback) {
+// '/api/users/:email'
+User.getUserByEmail = function (email, callback) {
   const specificEmail = { email };
   console.log('specificEmail is: ', specificEmail);
   User.findOne(specificEmail, callback);
 };
 
-// '/api/users/' in server.js
-module.exports.addUser = function (userName, callback) {
-  // http://mongoosejs.com/docs/models.html - create: User.create({}, callback)
-  // callback in 'server.js' should be function (err, userName)
+// '/api/users/'
+User.addUser = function (userName, callback) {
   User.create(userName, callback);
 };

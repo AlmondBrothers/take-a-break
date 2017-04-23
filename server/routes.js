@@ -4,8 +4,8 @@ module.exports = (app, passport, Break) => {
     res.render('index.html'); // load the index.ejs file
   });
   // route for showing the profile page
-  app.get('/profile', isLoggedIn, (req, res) => {
-    res.render('profile.ejs', {
+  app.get('/#/home', isLoggedIn, (req, res) => {
+    res.render('../home/view.html', {
       user: req.user // get the user out of session and pass to template
     });
   });

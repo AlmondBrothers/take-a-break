@@ -6,7 +6,8 @@ const passport = require('passport');
 const path = require('path');
 
 const app = express();
-const db = mongoose.connect('mongodb://localhost/takeABreak');
+const uri = process.env.MONGODB_URI;
+const db = mongoose.connect(uri);
 
 autoIncrement.initialize(db);
 require('./server/models/breaks');
