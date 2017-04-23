@@ -8,8 +8,6 @@ const path = require('path');
 const app = express();
 const uri = process.env.MONGODB_URI;
 
-console.log(uri)
-
 const db = mongoose.connect(uri);
 
 autoIncrement.initialize(db);
@@ -26,5 +24,5 @@ require('./server/routes')(app, passport, Break);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.listen(8000);
+app.listen(process.env.PORT || 8000);
 module.exports = app;
