@@ -1,5 +1,4 @@
-// Factory Service
-myApp.factory('aBreak', function ($http) {
+app.factory('aBreak', function ($http) {
   const getBreak = () => {
     return $http({
       method: 'GET',

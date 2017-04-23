@@ -3,8 +3,8 @@
   <h2 ng-model="breakType">{{break.type}}</h2>
   <h1>{{break.title}}</h1>
   <p>{{break.description}}</p>
-    <a class="btn btn-primary btn-lg" role="button" ng-click="completeBreak($breakType)">Completed</a>
-    <a class="btn btn-primary btn-lg" role="button" ng-click="notCompleteBreak($breakType)">Skipped</a>
+    <a class="btn btn-primary btn-lg" role="button" ng-click="completedBreak($breakType)">Completed</a>
+    <a class="btn btn-primary btn-lg" role="button" ng-click="skippedBreak($breakType)">Skipped</a>
 </div>
 <div>
   <h2>Mental Breakdown: {{percent(mentalBreaks.Yes, mentalBreaks.No) || 0}}% Complete!</h2>

@@ -1,4 +1,4 @@
-myApp.controller('home', function($scope, $location, aBreak) {
+app.controller('home', function ($scope, $location, aBreak) {
   $scope.break = {};
   $scope.physicalBreaks = { Yes: 0, No: 0 };
   $scope.mentalBreaks = { Yes: 0, No: 0 };
@@ -15,7 +15,7 @@ myApp.controller('home', function($scope, $location, aBreak) {
 
   getABreak();
 
-  $scope.completeBreak = () => {
+  $scope.completedBreak = () => {
     const breakType = $scope.break.type;
     if (breakType === 'Physical') {
       $scope.physicalBreaks.Yes++;
@@ -25,11 +25,11 @@ myApp.controller('home', function($scope, $location, aBreak) {
     getABreak();
   };
 
-  $scope.notCompleteBreak = () => {
+  $scope.skippedBreak = () => {
     const breakType = $scope.break.type;
     if (breakType === 'Physical') {
       $scope.physicalBreaks.No++;
-      getABreak();
+      return getABreak();
     } 
     $scope.mentalBreaks.No++;
     getABreak();
