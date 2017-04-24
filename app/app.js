@@ -10,8 +10,5 @@ app.config(function ($routeProvider, $locationProvider) {
     templateUrl: '/signin/view.html',
     reloadOnSearch: false,
   })
-  .otherwise({
-    redirectTo: '/',
-  });
   $locationProvider.html5Mode(true);
 });
