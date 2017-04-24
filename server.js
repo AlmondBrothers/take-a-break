@@ -1,23 +1,28 @@
-var express = require('express');
-var mongoose = require('mongoose');
-var bodyParser = require('body-parser');
-var autoIncrement = require('mongoose-auto-increment');
-var app = express();
-var passport = require('passport');
-var GoogleStrategy = require('passport-google-oauth');
-var routes = require('./app/routes');
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const autoIncrement = require('mongoose-auto-increment');
+const passport = require('passport');
+const path = require('path');
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
-app.use('/', routes);
-app.use(express.static(__dirname + '/client'));
+const app = express();
+const uri = process.env.MONGODB_URI;
 
-var db = mongoose.connect('mongodb://localhost/takeABreak');
+const db = mongoose.connect(uri);
 
 autoIncrement.initialize(db);
+require('./server/models/breaks');
 
-User = require('./BackEnd/models/users.js');
-Break = require('./BackEnd/models/breaks.js');
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(express.static(path.join(__dirname, '/app')));
 
-app.listen(8000);
+const Break = require('./server/models/breaks');
+require('./config/passport')(passport);
+require('./server/routes')(app, passport, Break);
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.listen(process.env.PORT || 8000);
 module.exports = app;

@@ -1,21 +1,15 @@
-<html ng-app="myApp">
+<html ng-app="app">
 <head>
+  <link rel="shortcut icon" href="favicon.ico" >
+  <link rel="stylesheet" type="text/css" href="style.css" >
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> 
-
-
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css' >
   <title>Take a Break</title>
 </head>
 <body>
-  <div>
-    <a href="/auth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google</a>
-    <ul class="nav nav-pills">
-      <li role="presentation" class="active"><a href="#/home">Home</a></li>
-      <li role="presentation"><a href="/" onclick="signOut();">Logout</a></li>
-    </ul>
-  </div>
   <div align = "center">
-    <h1>Take a Break</h1>
+    <h1>Take A Break</h1>
   </div>
 
   <div align = "center" ng-view style = "margin: 5%"></div>
@@ -23,20 +17,17 @@
   <!-- cdns -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
-  <script
-  src="https://code.jquery.com/jquery-3.1.1.min.js"
-  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
   <!-- app module -->
   <script src="app.js"></script>
 
   <!-- constrollers -->
-  <script src="/controllers/home.js"></script>
+  <script src="/home/controller.js"></script>
   
   <!-- services -->
-  <script src="/services/services.js"></script>
+  <script src="/home/services.js"></script>
 
 </body>
 </html>
