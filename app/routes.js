@@ -2,9 +2,6 @@
 
 var router = require('express').Router();
 
-//routes for user
-router.get('/login', controller.users.get);
-
 module.exports = function(app, passport) {
 
     // route for home page
