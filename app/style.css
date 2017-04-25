@@ -1,0 +1,21 @@
+body {
+  background: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url("https://static.pexels.com/photos/63340/pexels-photo-63340.jpeg");
+  background-size: cover;
+
+}
+
+.jumbotron {
+  border-radius: 10px;
+}
+
+.progress {
+  border-radius: 5px;
+}
+
+.btn-sm {
+  margin: 10px;
+}
+
+h1 {
+  color: white;
+}

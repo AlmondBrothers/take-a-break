@@ -1,7 +1,7 @@
 module.exports = {
   googleAuth: {
-    clientID: '615892834166-ivohjnsuejg5llvsn8khqcqher5qfbpm.apps.googleusercontent.com',
-    clientSecret: 'b1p3P-WjwalUU2hFaKUlQ7V1',
-    callbackURL: 'http://localhost:8000/auth/google/callback'
+    clientID: '175873763399-4q5p8tdbhqttt1rcr8bsurdpgcfinmee.apps.googleusercontent.com',
+    clientSecret: 'ObTpx5xFR7xq_Qtb-o31K-oc',
+    callbackURL: 'http://www.upbreaks.com/auth/google/callback'
   }
 };
