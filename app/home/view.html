@@ -1,12 +1,11 @@
-<a href="/logout" class="btn btn-default btn-sm">Logout</a> 
-<div class="jumbotron">
-  <h2 ng-model="breakType">{{break.type}}</h2>
-  <h1>{{break.title}}</h1>
-  <p>{{break.description}}</p>
+<div>
+<a href="/logout" class="btn btn-default btn-md">Logout</a> 
+  <chart data="chart" info="break"></chart>
+  <h4>{{break.description}}</h4>
     <a class="btn btn-primary btn-lg" role="button" ng-click="completedBreak($breakType)">Completed</a>
     <a class="btn btn-primary btn-lg" role="button" ng-click="skippedBreak($breakType)">Skipped</a>
 </div>
-<div>
+<!-- <div>
   <h2>Mental Breakdown: {{percent(mentalBreaks.Yes, mentalBreaks.No) || 0}}% Complete!</h2>
   <div class="progress">
     <div
@@ -58,4 +57,4 @@
       <td>{{percent(mentalBreaks.No, mentalBreaks.Yes) || 0}}</td>
     </tr>
   </tbody>
-</table>
+</table> -->
