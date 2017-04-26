@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html ng-app="app">
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -9,13 +10,14 @@
 </head>
 <body>
   <div align = "center">
-    <h1>Take A Break</h1>
+    <h1>upBreaks</h1>  
   </div>
 
-  <div align = "center" ng-view style = "margin: 5%"></div>
+  <div align = "center" ng-view ng-controller="home" style = "margin: 5%"></div>
 
   <!-- cdns -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.8.0/d3.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -25,6 +27,7 @@
 
   <!-- constrollers -->
   <script src="/home/controller.js"></script>
+  <script src="/chart/directive.js"></script>
   
   <!-- services -->
   <script src="/home/services.js"></script>

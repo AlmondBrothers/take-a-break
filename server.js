@@ -8,7 +8,7 @@ const path = require('path');
 const app = express();
 const uri = process.env.MONGODB_URI;
 
-const db = mongoose.connect(uri);
+const db = mongoose.connect(uri || 'mongodb://localhost/takeABreak');
 
 autoIncrement.initialize(db);
 require('./server/models/breaks');

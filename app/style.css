@@ -4,6 +4,16 @@ body {
 
 }
 
+text {
+  font-size: 30px;
+}
+
+chart {
+  width: 500px;
+  height: 500px;
+  display: block;
+}
+
 .jumbotron {
   border-radius: 10px;
 }
